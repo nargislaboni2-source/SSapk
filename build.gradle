@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.chaquo.python'
+}
+
+android {
+    namespace 'com.ss.apkbuilder'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.ss.apkbuilder'
+        minSdk 24
+        targetSdk 35
+        versionCode 2
+        versionName '2.0'
+        ndk {
+            abiFilters 'arm64-v8a', 'x86_64'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+chaquopy {
+    defaultConfig {
+        version = '3.13'
+    }
+}
